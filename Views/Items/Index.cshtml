@@ -1,0 +1,48 @@
+@model IEnumerable<Shop.Models.Item>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {_code=item.Code }) |
+                @Html.ActionLink("Details", "Details", new {_code=item.Code }) |
+                @Html.ActionLink("Delete", "Delete", new {_code=item.Code })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<h3> @Html.ActionLink(linkText: "Go To Shop", actionName: "GoToShop")</h3>

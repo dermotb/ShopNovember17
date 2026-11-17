@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/a3f6b743-c44f-4e8a-af07-70427d40784d/resourceGroups/appsvc_windows_westeurope/providers/Microsoft.Web/sites/Contacts",
+    "appService.deploySubpath": "bin\\Publish"
+}
